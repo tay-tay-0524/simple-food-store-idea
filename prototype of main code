@@ -1,0 +1,50 @@
+meats = {"chicken": 5.99, "beef": 6.49, "pork": 2.79, "lamb": 7.89, "Salmon": 6.47}
+fruits = {"apple": 0.99, "banana": 0.59, "orange": 1.29, "grapes": 0.99}
+drinks = {"water": 0.89, "soda": 1.49, "juice": 2.49, "tea": 4.67, "milk": 3.45}
+total = 0
+things_getting = []
+
+def meat_function():
+    global total
+    global things_getting
+    global meats
+
+    print("Welcome to the Meats Section!")
+    while True:
+        for meat, price in meats.items():
+            print(f"{meat.capitalize()}: ${price}")
+
+        meat_choice = input("Enter the meat you want: ")
+        if meat_choice.lower() in meats:
+            total += meats[meat_choice.lower()]
+            things_getting.append(meat_choice.lower)
+        else:
+            print("We don't have that meat currently.")
+
+        print("Meats Completed! Would you like to go to another category?n\")
+        answer = input("Enter Y for Yes or N for No: ")
+
+        if answer.upper() == "Y":
+            category_choice = input("Enter the category name: ")
+
+            #this will be the meats function again for fruits and drinks
+
+        else:
+            print("Ok! Going back to the Meats! n\")
+            continue
+
+
+
+
+print("Welcome! Please select the category you want!")
+
+for category in ["meats", "fruits", "drinks"]:
+    print(f"- {category.capitalize()}")
+
+category_choice = input("Enter the category name: ")
+
+if category_choice.lower() in ["meats", "fruits", "drinks"]:
+    if category_choice.lower() == "meats":
+        meat_function()
+    else:
+        print("Category not available yet.")
