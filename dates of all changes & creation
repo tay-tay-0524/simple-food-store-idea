@@ -5,4 +5,4 @@ link to testing IDE: https://colab.research.google.com/drive/1E67EOBoBqySEIFVuVm
 
 10.23.25 - added the drink function. very similar to (almost exactly like) the meats function, but for drinks only
 
-10.31.25 - tested new code for the program. found a problem: the drinks function wouldn't run or work, and removed new line code
+10.31.25 - tested new code for the program. found a problem: the drinks function wouldn't run or work, and removed new line code. then I tested out the drink function to try and perfect it
