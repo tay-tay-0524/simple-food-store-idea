@@ -1,0 +1,33 @@
+def drink_function():
+    global total
+    global things_getting
+    global drinks
+
+    print("Welcome to the Drinks Section!")
+    while True:
+        for drink, price in drinks.items():
+            print(f"{drink.capitalize()}: ${price}")
+
+        drink_choice = input("Enter the type of drink you want: ")
+        if drink_choice.lower() in drinks:
+            total += drinks[drink_choice.lower()]
+            things_getting.append(drink_choice.lower)
+        else:
+            print("We don't have that type of drink currently.")
+
+        print("Meats Completed! Would you like to go to another category?")
+        answer = input("Enter Y for Yes or N for No: ")
+
+        if answer.upper() == "Y":
+            category_choice = input("Enter the category name: ")
+
+            #this will be the meats function again for fruits and meats
+            if category_choice.lower() == "meats":
+              meat_calling = meat_function()
+              print(meat_calling)
+
+            #this will be the line the enters the fruits category
+
+        else:
+            print("Ok! Going back to the drinks!")
+            continue
