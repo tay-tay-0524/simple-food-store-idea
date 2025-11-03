@@ -4,6 +4,46 @@ drinks = {"water": 0.89, "soda": 1.49, "juice": 2.49, "tea": 4.67, "milk": 3.45}
 total = 0
 things_getting = []
 
+def drink_function():
+    global total
+    global things_getting
+    global drinks
+
+    print("Welcome to the Drinks Section!")
+    while True:
+        for drink, price in drinks.items():
+            print(f"{drink.capitalize()}: ${price}")
+
+        drink_choice = input("Enter the type of drink you want: ")
+        if drink_choice.lower() in drinks:
+            total += drinks[drink_choice.lower()]
+            things_getting.append(drink_choice.lower)
+        else:
+            print("We don't have that type of drink currently.")
+
+        print("Meats Completed! Would you like to go to another category?")
+        answer = input("Enter Y for Yes or N for No: ")
+
+        if answer.upper() == "Y":
+            category_choice = input("Enter the category name: ")
+
+            #this will be the meats function again for fruits and meats
+            if category_choice.lower() == "meats":
+              meat_calling = meat_function()
+              print(meat_calling)
+            elif category_choice.lower() == "fruits":
+              fruit = fruit_function()
+              print(fruit)
+            else:
+              print("We don't have that here!")
+              quit()
+
+            #this will be the line the enters the fruits category
+
+        else:
+            print("Ok! Going back to the drinks!")
+            continue
+
 def meat_function():
     global total
     global things_getting
@@ -21,46 +61,65 @@ def meat_function():
         else:
             print("We don't have that meat currently.")
 
-        print("Meats Completed! Would you like to go to another category?n\")
+        print("Meats Completed! Would you like to go to another category?")
         answer = input("Enter Y for Yes or N for No: ")
 
         if answer.upper() == "Y":
             category_choice = input("Enter the category name: ")
+            if category_choice.lower() == "drinks":
+              drink = drink_function()
+              print(drink)
+            elif category_choice.lower() == "fruits":
+              fruit = fruit_function()
+              print(fruit)
+            else:
+              print("We don't have that!")
+              quit()
 
             #this will be the meats function again for fruits and drinks
 
         else:
-            print("Ok! Going back to the Meats! n\")
+            print("Ok! Going back to the Meats!")
             continue
 
-
-def drink_function():
+def fruit_function():
     global total
     global things_getting
-    global drinks
+    global fruits
 
-    print("Welcome to the Drinks Section!")
+    print("Welcome to the Fruits Section!")
     while True:
-        for drink, price in drinks.items():
-            print(f"{meat.capitalize()}: ${price}")
+        for fruit, price in fruits.items():
+            print(f"{fruit.capitalize()}: ${price}")
 
-        drink_choice = input("Enter the type of drink you want: ")
-        if drink_choice.lower() in drinks:
-            total += drinks[drink_choice.lower()]
-            things_getting.append(drink_choice.lower)
+        fruit_choice = input("Enter the type of fruit you want: ")
+        if fruit_choice.lower() in fruits:
+            total += fruits[fruit_choice.lower()]
+            things_getting.append(fruit_choice.lower)
         else:
-            print("We don't have that type of drink currently.")
+            print("We don't have that type of fruit currently.")
 
-        print("Meats Completed! Would you like to go to another category?n\")
+        print("Fruits Completed! Would you like to go to another category?")
         answer = input("Enter Y for Yes or N for No: ")
 
         if answer.upper() == "Y":
             category_choice = input("Enter the category name: ")
 
             #this will be the meats function again for fruits and meats
+            if category_choice.lower() == "meats":
+              meat_calling = meat_function()
+              print(meat_calling)
+            elif category_choice.lower() == "drinks":
+              drink_calling = drink_function()
+              print(drink_calling)
+            else:
+              print("We don't have that here!")
+              quit()
+
+            #this will be the line the enters the fruits category
 
         else:
-            print("Ok! Going back to the drinks! n\")
+            print("Ok! Going back to the fruits!")
             continue
 
 
@@ -76,5 +135,7 @@ if category_choice.lower() in ["meats", "fruits", "drinks"]:
         meat_function()
     elif category_choice.lower() == "drinks":
         drink_function()
+    elif category_choice.lower() == "fruits":
+        fruit_function()
     else:
         print("Category not available yet.")
