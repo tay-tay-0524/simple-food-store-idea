@@ -1,0 +1,35 @@
+def pay_function():
+  print("Welcome!")
+
+  while True:
+    finished = input("Did you finish shopping? > ")
+    
+    if finished.upper() == "Y":
+    #this will end the program if the user is done shopping
+      print("Wonderful!")
+      print(f"Your total will be {}")
+      quit()
+    elif finished.upper() == "N":
+    #this will continue the program if the user isn't done shopping
+      print("Continue shopping!")
+
+      for i in ["fruits", "meats", "drinks"]:
+        print(i)
+        
+      continue_shopping = input("Which category do you want to return to? > ")
+
+      if continue_shopping.lower() == "fruits":
+        fruit_s = fruit_function()
+        print(fruit_s)
+      elif continue_shopping.lower() == "meats":
+        meat_s = meat_function()
+        print(meat_s)
+      elif continue_shopping.lower() == "drinks":
+        drink_s = drink_function()
+        print(drink_s)
+      else:
+        print("That category doesn't exist! Please try again!")
+        continue
+
+
+        
