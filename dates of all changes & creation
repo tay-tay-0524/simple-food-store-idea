@@ -8,3 +8,7 @@ link to testing IDE: https://colab.research.google.com/drive/1E67EOBoBqySEIFVuVm
 10.31.25 - tested new code for the program. found a problem: the drinks function wouldn't run or work, and removed new line code. then I tested out the drink function to try and perfect it
 
 11.03.25 - made the fruit function and did a final test run of the main prototype. Attempt: Successful!
+
+11.17.25 - tested program with new pay function. Attempt 1: Unsuccessful! Cause: repeated action. Attempt 2: Successful! Added exit() function.
+
+11.17.25 - completed entire program together
